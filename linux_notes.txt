@@ -1,21 +1,6 @@
-* centos 8 gui/cmd mode switch
+## centos 8 gui/cmd mode switch
+```
 sudo systemctl get-default
 sudo systemctl set-default multi-user.target # for command line mode
 sudo systemctl set-default graphical.target  # for gui mode
-
-* ssh server
-sudo apt install openssh-client openssh-server
-sudo systemctl restart sshd
-touch /home/vlsi/.ssh/authorized_keys
-sudo chown vlsi /home/vlsi/.ssh/authorized_keys
-sudo chown vlsi /home/vlsi/.ssh
-sudo chown :vlsi /home/vlsi/.ssh/authorized_keys
-sudo chown :vlsi /home/vlsi/.ssh
-sudo chmod 600 /home/vlsi/.ssh/authorized_keys
-sudo chmod 700 /home/vlsi/.ssh
-
-* add these to /etc/ssh/sshd_config
-HostKeyAlgorithms +ssh-rsa
-PubkeyAcceptedKeyTypes +ssh-rsa
-
-
+```
