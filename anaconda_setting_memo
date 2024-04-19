@@ -1,9 +1,0 @@
-If you'd prefer that conda's base environment not be activated on startup, 
-   set the auto_activate_base parameter to false: 
-
-conda config --set auto_activate_base false
-
-## Activate the envs installed in other users' dir
-* sudo chmod 770 /home/other_user
-* disable strictmode in /etc/ssh/sshd_conf
-* conda activate /home/other_user/anaconda3
