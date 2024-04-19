@@ -1,0 +1,9 @@
+Usage: ./paper.sh
+
+1. Type the keyword you would like to search
+
+2. End the process with 'ctrl-C'
+
+3. You may create your own script with the original one (paper.sh)
+	a. For example, searching in other folders
+	  	"fd -e pdf "$input" 'present*/  協/  昊霖/  衡/  儀/ 志/' "

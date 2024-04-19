@@ -1,0 +1,22 @@
+1.　library有缺少，記得選擇對應的glibc版本
+使用yum install glibc來確定，記得選x86_64架構
+"Last metadata expiration check: 0:47:25 ago on Tue 08 Aug 2023 08:53:47 PM CST.
+Package glibc-2.28-228.el8.x86_64 is already installed."
+
+安裝缺少的library
+sudo rpm -ivh xxxxx.rpm
+
+參考：
+https://blog.csdn.net/baidu_39053164/article/details/111195714
+https://pkgs.org/
+
+2.　SELinux會阻止xrun跑模擬（因為tool要求使用memory），要更改SELinux的設定爲permissive（較安全）或disabled
+
+參考：
+https://help.eset.com/protect_deploy_va/90/zh-TW/disable_selinux.html
+
+3. CIC的腳本（有可能影響到GUI, e.g. /cad/synopsys/CIC/verdi64.cshrc）
+原因可能是有缺少library
+要找缺了什麼library有兩種方法
+	1.) 在terminal打 gnome-control-center
+	2.) 每個eda tool都執行一遍，從跳出來的錯誤訊息裡面來看。

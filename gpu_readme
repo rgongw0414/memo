@@ -1,0 +1,36 @@
+######## If not necessary, do not update tensorflow, pytorch, cuda, cudnn, or nvidia-related drivers. ##########
+
+1. Run on native environment
+	a. Nothing special
+
+2. Run on docker image/container
+	a. Docker command can only be executed with sudo
+	b. To run a image, sudo docker run -it [-d] [--rm] [-p 'host_port':'container_port'] --gpus all [image_name:tag] [command]
+		1.) [--rm]: automaticly remove the container after terminated
+		2.) [image_name:tag]: e.g. rgongw/tensorflow:latest-gpu-jupyter
+		3.) [-d]: run in detach mode, i.e. run the container in background; Attact with command "sudo docker attach 'container_id, or _name'
+
+3. Run on anaconda environment
+	a. Switch to bash with 
+      $ /bin/bash
+	b. Activate your environment with "conda activate 'environment_name'"
+		1.) Deactivate with 
+        $ conda deactivate
+	c. Then you are good to go
+
+  d. Jupyter-notebook/-lab server
+    1.) Open jupyter server
+      $ jupyter-notebook --no-browser
+      $ jupyter notebook --no-browser --port=your_port_number #port 8888, 8889 used
+      $ jupyter-lab --no-browser
+    2.) Port forwarding with ssh from your own PC
+      $ ssh -NL 8787:127.0.0.1:8888 vlsi@140.120.14.11
+      $ ssh -NL 8787:127.0.0.1:your_port_number vlsi@140.120.14.11 
+      (stop forwarding with Ctrl+C)
+    3.) Open 127.0.0.1:8787 in browser and enter the password
+    
+      **Juypter-notebook/Color themes
+        1. pip install jupyterthemes
+        2. jt -l
+        3. jt -t theme-name #Personal Recommendation: onedork or chesterish
+
