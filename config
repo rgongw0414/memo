@@ -1,0 +1,5 @@
+# path: /home/eric/.ssh/config
+# This is the user-specific ssh_config 
+# Automaticlly add IdentityFiles (ssh-add) to ssh-agent (ssh-agent is executed by .bashrc)
+AddKeysToAgent yes   # ssh-add and ssh-agent allow you only having to pass the passphrase one time
+IdentityFile ~/.ssh/lab   # add this key to default keys (like ~/.ssh/id_rsa, ...)
