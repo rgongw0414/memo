@@ -15,13 +15,19 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH
 export PS1="\[\e[30;47m\][\u@\h \w\[\e[30;47m\]]\[\e[0m\] \[\e[34m\](bash)\[\e[0m\] \$ "
 export GIT_SSH_COMMAND="ssh -i /home/eric/.ssh/lab"
 
+# User specific aliases and functions
 alias la='ls -a'
 alias ll='ls -lh'
 alias lla='ls -lha'
+alias ccc='g++ --std=c++11 -Wall -Wfatal-errors -Wextra'
+
+# Bash only checks the first word of a command for an alias, any words after that are not checked.
+# We can tell bash to check the next word after the alias (i.e sudo) by adding a space to the end of the alias value.
+alias sudo='sudo '
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# User specific aliases and functions
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -38,7 +44,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Automatically start ssh-agent 
+#if [ -z "$SSH_AUTH_SOCK" ] ; then
+#  eval `ssh-agent`
+#fi
+
+# Automatically start ssh-agent
 SSH_AGENT_PID=`pgrep -U $USER -o 'ssh-agent'`
 if [ -z $SSH_AGENT_PID ]; then
     eval $(ssh-agent -s)
@@ -50,4 +60,3 @@ else
     export SSH_AUTH_SOCK="$SSH_AGENT_SOCK"
 fi
 
-alias ccc='g++ --std=c++14 -Wall -Wfatal-errors -Wextra'
