@@ -22,7 +22,9 @@ fi
 #export LD_LIBRARY_PATH=/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH
 
 export PS1="\[\e[30;47m\][\u@\h \w\[\e[30;47m\]]\[\e[0m\] \[\e[34m\](bash)\[\e[0m\] \$ "
-export GIT_SSH_COMMAND="ssh -i /home/eric/.ssh/lab"
+
+# if set "AddKeysToAgent yes" and "IdentityFile ~/.ssh/lab" in  ~/.ssh/config, then we don't neet this line.
+#export GIT_SSH_COMMAND="ssh -i /home/eric/.ssh/lab" 
 
 # User specific aliases and functions
 alias la='ls -a'
