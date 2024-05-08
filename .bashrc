@@ -62,7 +62,7 @@ if [ -z $SSH_AGENT_PID ]; then
     #exit
 else
     # if ssh-agent already executing, then use the use the existing one
-    SSH_AGENT_SOCK=`find /tmp -user $USER -path '*ssh*' -type s -iname 'agent.'$(($SSH_AGENT_PID-1)) 2>/dev/null`# redirects stderr (the purpose of 2>) to the null device, effectively silencing any error output.
+    SSH_AGENT_SOCK=`find /tmp -user $USER -path '*ssh*' -type s -iname 'agent.'$(($SSH_AGENT_PID-1)) 2>/dev/null` # redirects stderr (the purpose of 2>) to the null device, effectively silencing any error output.
     export SSH_AGENT_PID="$SSH_AGENT_PID"
     export SSH_AUTH_SOCK="$SSH_AGENT_SOCK"
     # 2>/dev/null: A special device file in Unix-like systems that discards all data written to it.
