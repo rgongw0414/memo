@@ -57,8 +57,9 @@ unset __conda_setup
 # Automatically starts ssh-agent, and reuse the previously running agent.
 SSH_AGENT_PID=`pgrep -U $USER -o 'ssh-agent'`
 if [ -z $SSH_AGENT_PID ]; then
+    #pkill -u eric ssh-agent  # kill all the agents running by current user
     eval $(ssh-agent) # creates a ssh-agent process, and executes the output of ssh-agnet, storing the information of keys in memory (in current shell).
-    # ssh-agent bash # starts a new Bash shell, and sets up the environment for agent.
+    #ssh-agent bash # starts a new Bash shell, and sets up the environment for agent.
     ssh-add ~/.ssh/lab     # add ~/.ssh/lab into agent manually, so that every agent got this key in it.
     #exit
 else
