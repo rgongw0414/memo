@@ -1,4 +1,5 @@
 # .bashrc
+# NOTE: If changes are made, all the sessions must re-source .bashrc.
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
