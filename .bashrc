@@ -27,9 +27,9 @@ export PS1="\[\e[30;47m\][\u@\h \w\[\e[30;47m\]]\[\e[0m\] \[\e[34m\](bash)\[\e[0
 #export GIT_SSH_COMMAND="ssh -i /home/eric/.ssh/lab" 
 
 # User specific aliases and functions
-alias la='ls -a'
-alias ll='ls -lh'
-alias lla='ls -lha'
+alias la='ls -aF'
+alias ll='ls -lhF'
+alias lla='ls -lhaF'
 alias ccc='g++ --std=c++17 -Wall -Wfatal-errors -Wextra'
 
 # Bash only checks the first word of a command for an alias, any words after that are not checked.
