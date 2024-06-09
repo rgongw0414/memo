@@ -9,12 +9,12 @@ PubkeyAcceptedKeyTypes +ssh-rsa
 ```
 sudo apt install openssh-client openssh-server 
 sudo systemctl restart sshd
-touch /home/vlsi/.ssh/authorizedi\_keys
-sudo chown vlsi /home/vlsi/.ssh/authorized\_keys
+touch /home/vlsi/.ssh/authorized_keys
+sudo chown vlsi /home/vlsi/.ssh/authorized_keys
 sudo chown vlsi /home/vlsi/.ssh
-sudo chown :vlsi /home/vlsi/.ssh/authorized\_keys
+sudo chown :vlsi /home/vlsi/.ssh/authorized_keys
 sudo chown :vlsi /home/vlsi/.ssh
-sudo chmod 600 /home/vlsi/.ssh/authorized\_keys
+sudo chmod 600 /home/vlsi/.ssh/authorized_keys
 sudo chmod 700 /home/vlsi/.ssh
 ```
 
