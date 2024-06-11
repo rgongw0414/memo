@@ -7,8 +7,9 @@ PubkeyAcceptedKeyTypes +ssh-rsa
 
 ## ssh server settings
 ```
-sudo apt install openssh-client openssh-server 
-sudo systemctl enable sshs
+sudo apt install openssh-client openssh-server
+(sudo yum/dfn install openssh-client openssh-server)  # for CentOS
+sudo systemctl enable sshd
 sudo systemctl restart sshd
 mkdir ~/.ssh
 touch ~/.ssh/authorized_keys
