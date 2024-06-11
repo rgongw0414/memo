@@ -8,14 +8,16 @@ PubkeyAcceptedKeyTypes +ssh-rsa
 ## ssh server settings
 ```
 sudo apt install openssh-client openssh-server 
+sudo systemctl enable sshs
 sudo systemctl restart sshd
-touch /home/vlsi/.ssh/authorized_keys
-sudo chown vlsi /home/vlsi/.ssh/authorized_keys
-sudo chown vlsi /home/vlsi/.ssh
-sudo chown :vlsi /home/vlsi/.ssh/authorized_keys
-sudo chown :vlsi /home/vlsi/.ssh
-sudo chmod 600 /home/vlsi/.ssh/authorized_keys
-sudo chmod 700 /home/vlsi/.ssh
+mkdir ~/.ssh
+touch ~/.ssh/authorized_keys
+sudo chown $USER ~/.ssh/authorized_keys
+sudo chown $USER ~/.ssh
+sudo chown :$USER ~/.ssh/authorized_keys
+sudo chown :$USER ~/.ssh
+sudo chmod 600 ~/.ssh/authorized_keys
+sudo chmod 700 ~/.ssh
 ```
 
 
