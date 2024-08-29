@@ -13,12 +13,13 @@ sudo systemctl enable sshd
 sudo systemctl restart sshd
 mkdir ~/.ssh
 touch ~/.ssh/authorized_keys
-sudo chown $USER ~/.ssh/authorized_keys
-sudo chown $USER ~/.ssh
-sudo chown :$USER ~/.ssh/authorized_keys
-sudo chown :$USER ~/.ssh
-sudo chmod 600 ~/.ssh/authorized_keys
-sudo chmod 700 ~/.ssh
+chown $USER ~/.ssh/authorized_keys
+chown $USER ~/.ssh
+chown :$USER ~/.ssh/authorized_keys
+chown :$USER ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+sudo systemctl restart sshd
 ```
 
 
